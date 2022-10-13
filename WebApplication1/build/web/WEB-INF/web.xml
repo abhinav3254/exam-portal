@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    
+    <!--servlet Declaration-->
+    
+    <servlet>
+        <servlet-name>
+            first
+        </servlet-name>
+        
+        <servlet-class>com.servlet.FirstServlet</servlet-class>
+    </servlet>
+    
+    
+    
+    
+    <!--Mapping--> 
+    
+    
+    <servlet-mapping>
+        <servlet-name>
+            first
+            <!--This first came from the top that the servlet name of FirstServlet class was first so putting here-->
+            <!--whatever will be the upper servlet name that will be assigned to the--> 
+        </servlet-name>
+        
+        <url-pattern>
+            /web
+        </url-pattern>
+        
+    </servlet-mapping>
+    
+    
+    
+
+
+    
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
