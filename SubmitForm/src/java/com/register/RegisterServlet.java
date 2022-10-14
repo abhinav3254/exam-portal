@@ -24,6 +24,13 @@ public void doPost(HttpServletRequest request , HttpServletResponse response) th
         out.println("<h2> gender :- "+gender+"</h2>");
         out.println("<h2> course :- "+course+"</h2>");
         out.println("<h2> cond :- "+cond+"</h2>");
+        
+        
+        
+        RequestDispatcher rd = request.getRequestDispatcher("sucone");
+        rd.forward(request, response);
+        
+        
     } else{
     out.println("<h2>Accept the Terms and Conditions</h2>");
     //I want to include output of index.html
