@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Submit Form</title>
+        <style>
+            .container{
+                width: 30%;
+                border: 1px solid red;
+                margin: auto;
+                padding: 20px;
+                font-size: 20px;
+            }
+            #myForm table tr td input {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class = "container">
+            <h1 style="text-align: center">My Form</h1>
+            
+            <!--post method is secure and can have many data-->
+            <form id="myForm" action="registerServlet" method="post">
+                
+                <table>
+                    <tr>
+                        <td>Enter your Name:- </td>
+                        <td><input type="text" name="userName" placeholder="Name"/></td>
+                    </tr>
+                    <tr>
+                        <td>Enter your Password- </td>
+                        <td><input type="password" name="userPassword" placeholder="password"/></td>
+                    </tr>
+                    <tr>
+                        <td>Enter your Email- </td>
+                        <td><input type="email" name="userEmail" placeholder="Email"/></td>
+                    </tr>
+                    <tr>
+                        <td>Select Gender</td>
+                        <td><input type="radio" name="userGender" value="male"/>Male &nbsp; &nbsp; <input type="radio" name="userGender" value="male"/>Female</td>
+                    </tr>
+                    <tr>
+                        <td>Select Course</td>
+                        <td>
+                            <select name="userCourse">
+                                <option value="Java">Java</option>
+                                <option value="Python">Python</option>
+                                <option value="PHP">PHP</option>
+                                <option value="RubyOnRails">RubyOnRails</option>
+                                <option value="C">C</option>
+                                <option value="C++">C++</option>
+                                <option value="DeVops">DeVops</option>
+                                <option value="Android">Android</option>
+                                <option value="web">web</option>
+                                <option value="Swing">Swing</option>
+                                <option value="UI/UX">UI/UX</option>
+                                <option value="Testing">Testing</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <input type="checkbox" value="checked" name="condition"/>
+                        </td>
+                        <td>
+                            Agree Terms and Condition
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <button type="submit">Register</button>
+                            <button type="reset">Reset</button>
+                        </td>
+                    </tr>
+                </table>
+                
+            </form>
+            
+        </div>
+
+    </body>
+</html>
