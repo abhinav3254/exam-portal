@@ -26,6 +26,14 @@ public void doPost(HttpServletRequest request , HttpServletResponse response) th
         out.println("<h2> cond :- "+cond+"</h2>");
     } else{
     out.println("<h2>Accept the Terms and Conditions</h2>");
+    //I want to include output of index.html
+    
+//    Get the obejct of the request dispatcher
+        RequestDispatcher rd = request.getRequestDispatcher("index.html");
+        
+        // include method
+        rd.include(request, response);
+    
     }
 }    
 }
