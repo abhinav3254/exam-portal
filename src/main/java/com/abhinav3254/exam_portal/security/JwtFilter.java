@@ -1,7 +1,6 @@
 package com.abhinav3254.exam_portal.security;
 
 import com.abhinav3254.exam_portal.exception.CustomException;
-import com.abhinav3254.exam_portal.model.User;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
