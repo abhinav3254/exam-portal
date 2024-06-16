@@ -1,6 +1,5 @@
 package com.abhinav3254.exam_portal.service;
 
-
 import com.abhinav3254.exam_portal.dto.LoginDTO;
 import com.abhinav3254.exam_portal.dto.RegisterDTO;
 import com.abhinav3254.exam_portal.dto.ResponseDTO;
@@ -35,7 +34,10 @@ public class AuthService {
 
     public ResponseDTO registerUser(RegisterDTO registerDTO) {
         Optional<User> userOptional = userRepository.findByEmail(registerDTO.getEmail());
-        if (userOptional.isPresent()) throw new CustomException("Email already in user", HttpStatus.BAD_REQUEST);
+        if (userOptional.isPresent()) {
+            throw new CustomException("The email address is already registered. Please use a different email address.", HttpStatus.BAD_REQUEST);
+        }
+
         User user = new User();
         user.setRole(roleRepository.findByName("USER"));
         user.setName(registerDTO.getName());
@@ -47,24 +49,24 @@ public class AuthService {
 
         userRepository.save(user);
 
-        return new ResponseDTO("User Saved");
+        return new ResponseDTO("Registration successful. Welcome, " + user.getName() + "!");
     }
 
     public ResponseDTO loginUser(LoginDTO loginDTO, HttpServletResponse response) {
         Optional<User> userOptional = userRepository.findByEmail(loginDTO.getEmail());
-        if (userOptional.isEmpty()) throw new CustomException("User not found",HttpStatus.NOT_FOUND);
+        if (userOptional.isEmpty()) {
+            throw new CustomException("No account found with the provided email address.", HttpStatus.NOT_FOUND);
+        }
+
         User user = userOptional.get();
 
         if (passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())) {
-            String token = jwtUtils.generateToken(user.getId().toString(),user.getRole().getName());
+            String token = jwtUtils.generateToken(user.getEmail(),user.getId(), user.getRole().getName());
 
-            Cookie cookie = new Cookie("token",token);
-            response.addCookie(cookie);
-
-            return new ResponseDTO("Logged In");
+//            return new ResponseDTO("Login successful. Welcome back, " + user.getName() + "!");
+            return new ResponseDTO(token);
         }
 
-        throw new CustomException("Incorrect Password",HttpStatus.BAD_REQUEST);
-
+        throw new CustomException("The password you entered is incorrect. Please try again.", HttpStatus.BAD_REQUEST);
     }
 }

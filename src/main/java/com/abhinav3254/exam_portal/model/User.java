@@ -29,6 +29,9 @@ public class User {
     @Column(name = "gender")
     private String gender;
 
+    @Column(name = "user_image")
+    private byte[] profileImage;
+
     @OneToOne
     @JoinColumn(name = "role_id")
     private Role role;

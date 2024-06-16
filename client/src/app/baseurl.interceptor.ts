@@ -3,7 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -12,10 +13,19 @@ export class BaseurlInterceptor implements HttpInterceptor {
 
   constructor() { }
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Modify URL to prepend base URL
+    request = request.clone({
+      url: `http://localhost:8080${request.url}`,
+    });
 
-    const apiReq = request.clone({ url: `http://localhost:8080${request.url}` })
+    // Set headers
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    });
+    request = request.clone({ headers });
 
-    return next.handle(apiReq);
+    return next.handle(request);
   }
 }
