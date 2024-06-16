@@ -1,0 +1,92 @@
+.CreateTest {
+    height: 90vh;
+    overflow: scroll;
+    padding: 10px;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .input {
+        width: fit-content;
+        margin: 0 5px;
+        min-width: 220px;
+    }
+}
+
+.cards {
+    margin: 10px 0;
+}
+
+.end {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.title {
+    width: 100%;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+
+    .option {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+
+        .radio {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.header {
+    p {
+        margin: 5px 0;
+        padding: 0;
+        font-size: 30px;
+    }
+    .upper-line {
+        height: 2px;
+        background-color: gainsboro;
+        margin: 10px;
+    }
+}
+
+.btns {
+    display: flex;
+    .btn {
+        margin: 10px;
+    }
+}
+
+
+.input {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    :focus{
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    }
+    
+}
