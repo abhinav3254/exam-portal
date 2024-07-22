@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { OnboardStudentComponent } from './components/student/onboard-student/onboard-student.component';
 import { StudentDetailsComponent } from './components/student/student-details/student-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StudentDetailsComponent } from './components/student/student-details/st
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
