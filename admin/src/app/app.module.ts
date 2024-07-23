@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StudentsComponent } from './components/students/students/students.component';
 import { OnboardStudentsComponent } from './components/students/onboard-students/onboard-students.component';
 import { BackComponentComponent } from './components/back-component/back-component.component';
+import { QuestionsComponent } from './components/questions/questions/questions.component';
+import { CreateQuestionsComponent } from './components/questions/create-questions/create-questions.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { BackComponentComponent } from './components/back-component/back-compone
     DashboardComponent,
     StudentsComponent,
     OnboardStudentsComponent,
-    BackComponentComponent
+    BackComponentComponent,
+    QuestionsComponent,
+    CreateQuestionsComponent
   ],
   imports: [
     BrowserModule,
