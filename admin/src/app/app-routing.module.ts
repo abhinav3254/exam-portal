@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { StudentDetailsComponent } from './components/student/student-details/student-details.component';
-import { OnboardStudentComponent } from './components/student/onboard-student/onboard-student.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { StudentsComponent } from './components/students/students/students.component';
+import { OnboardStudentsComponent } from './components/students/onboard-students/onboard-students.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'students', component: StudentDetailsComponent },
-  { path: 'students/onboard', component: OnboardStudentComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'students', component: StudentsComponent },
+  { path: 'students/onboard', component: OnboardStudentsComponent },
 ];
 
 @NgModule({

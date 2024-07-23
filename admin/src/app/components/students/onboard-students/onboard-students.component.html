@@ -1,0 +1,55 @@
+<div class="p-5 w-full">
+    <!-- header -->
+    <div>
+        <app-back-component [location]="currentLocation"></app-back-component>
+    </div>
+
+    <!-- form -->
+
+    <div>
+        <div class="flex flex-col items-center justify-center ">
+            <p class="text-4xl my-2 font-Sevillana">Onboard New Student</p>
+            <div class="h-[300px] w-[500px]">
+                <img class="w-full h-full object-cover " src="../../../../assets/images/onboard.svg" alt="">
+            </div>
+        </div>
+        <form class="my-5">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="flex flex-col">
+                    <label for="first_name">First Name</label>
+                    <input id="first_name" type="text" placeholder="John">
+                </div>
+                <div class="flex flex-col">
+                    <label for="last_name">Last Name</label>
+                    <input id="last_name" type="text" placeholder="Doe">
+                </div>
+                <div class="flex flex-col">
+                    <label for="phone_number">Phone Number</label>
+                    <input id="phone_number" type="text" placeholder="8977XXXXXX">
+                </div>
+                <div class="flex flex-col">
+                    <label for="email_address">Email Address</label>
+                    <input id="email_address" type="text" placeholder="john@mail.com">
+                </div>
+                <div class="flex flex-col">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option selected disabled value="">Gender</option>
+                        <option value={{gender}} *ngFor="let gender of genders">{{gender}}</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <label for="class_number">Class</label>
+                    <select id="class_number">
+                        <option selected disabled value="">class</option>
+                        <option value={{gender}} *ngFor="let gender of genders">{{gender}}</option>
+                    </select>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="flex items-center justify-center mt-10">
+                <button class="py-3 px-6 bg-primary text-white rounded-md shadow-2xl">onboard student</button>
+            </div>
+        </form>
+    </div>
+</div>

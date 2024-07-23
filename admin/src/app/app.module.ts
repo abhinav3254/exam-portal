@@ -3,24 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { OnboardStudentComponent } from './components/student/onboard-student/onboard-student.component';
-import { StudentDetailsComponent } from './components/student/student-details/student-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { StudentsComponent } from './components/students/students/students.component';
+import { OnboardStudentsComponent } from './components/students/onboard-students/onboard-students.component';
+import { BackComponentComponent } from './components/back-component/back-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SideNavComponent,
-    OnboardStudentComponent,
-    StudentDetailsComponent
+    DashboardComponent,
+    StudentsComponent,
+    OnboardStudentsComponent,
+    BackComponentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
